@@ -1,0 +1,163 @@
+:root {
+    --primary-color: #333; 
+    --secondary-color: #FFC72C; 
+    --background-color: #fff;
+    --alt-row-color: #f5f5f5;
+    --button-color: #D3D3D3; 
+    --button-color-hover: #0056b3;
+}
+
+body {
+    display: grid;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+}
+
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    border-radius: 10px 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--secondary-color);
+    height: 2em;
+    color: black;
+    font-weight: bolder;
+  }
+
+.triangleNameHeader, .triangleGradeHeader, .triangleMonthHeader, .triangleYearHeader{
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 8px 12px 8px;
+    border-color: transparent transparent var(--primary-color) transparent;
+    margin-left: 70%;
+    text-align: center;
+    visibility: hidden;
+ }
+
+ .triangle-descending{
+    visibility: visible;
+    transform: rotate(180deg);
+}
+
+.triangle-ascending{
+    visibility: visible;
+    transform: rotate(0deg);
+}
+  
+tr:nth-child(even) {
+    background-color: var(--alt-row-color);
+  }
+
+
+.file-input-label,.file-download,#clearTableButton, #filterInput, #filterButton, #clearFilterButton{
+    display: inline-block;
+    width: max-content;
+    height: fit-content;
+    padding: 10px; 
+    background-color: var(--button-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    border: none;
+    border-radius: 25px; 
+    margin: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.file-input-label:hover, .file-download:hover,#clearTableButton:hover, #filterInput:focus, #filterButton:hover, #clearFilterButton:hover{
+    background-color: var(--button-color-hover);
+    color: white;
+}
+
+.file-download{
+    margin: auto;
+    margin-top: 2em;
+    text-decoration: none;
+}
+
+#filterColumn{
+    background: var(--secondary-color);
+    width: 50%;
+    height: min-content;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.sticky-buttons {
+    position: sticky;
+    top: 0; 
+}
+
+.scroll-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: var(--button-color);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.scroll-to-top-button:hover {
+    background-color: var(--button-color-hover);
+}
+
+
+@media (max-width: 768px) {
+    th, td {
+        font-size: 12px;
+    }
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    th, td {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 901px) {
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .file-input-label, #clearTableButton, #filterButton, #clearFilterButton{
+        width: 80%;
+    }
+}

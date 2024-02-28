@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Student Performance</h1>
+    <div class="buttons">
+        <input type="file" id="fileInput" accept=".csv" style="display: none">
+        <label for="fileInput" id="uploadCsvLabel" class="file-input-label sticky-buttons">Upload CSV</label>
+        <button id="clearTableButton" class="sticky-buttons">Clear Table</button>
+        <div class="filter-container">
+            <label id="filterColumnLabel" for="filterColumn">Filter by:</label>
+            <select id="filterColumn"></select>
+            <input type="text" id="filterInput" placeholder="Enter filter value">
+        </div>
+        <button id="filterButton">Filter</button>
+        <button id="clearFilterButton">Clear Filters</button>
+    </div>
+    <button id="scrollToTopButton" class="scroll-to-top-button">^</button>
+
+    <div class="table-container">
+        <table id="performanceTable">
+            <thead class="sticky-buttons">
+                <tr>
+                    <th id="nameHeader">NAME <div class="triangleNameHeader"></div></th>
+                    <th id="gradeHeader">GRADE <div class="triangleGradeHeader"></div></th>
+                    <th id="monthHeader">MONTH <div class="triangleMonthHeader"></div></th>
+                    <th id="yearHeader">YEAR <div class="triangleYearHeader"></div></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <a class="file-download" style="display: none;">Download Filtered Data CSV</a>
+
+    <script src="app.js"></script>
+</body>
+</html>
